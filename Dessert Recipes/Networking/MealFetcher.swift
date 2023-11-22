@@ -9,11 +9,12 @@ import Foundation
 
 class MealFetcher: ObservableObject {
     @Published var meals: [Meal] = [Meal]()
-    //MARK: - Pre cached property for Meal Details
     @Published var mealDetail: [String: MealDetail] = [:]
     
    private let service = APIService()
     
+    //MARK: - Fetch All Meals
+    ///Fetches all dessert meals from the API and caches meal details
     func fetchAllMeals() {
         service.fetchMeals() { [weak self] result in
             DispatchQueue.main.async {
@@ -23,7 +24,6 @@ class MealFetcher: ObservableObject {
                 case .success(let mealsResponse):
                     self?.meals = mealsResponse.meals
                     
-                    //MARK: Caching Meal Details
                     mealsResponse.meals.forEach { meal in
                         self?.fetchMealDetailWith(id: meal.id)
                     }
@@ -32,7 +32,9 @@ class MealFetcher: ObservableObject {
         }
     }
     
-    //MARK: - Meal Detail Fetcher
+    //MARK: - FETCH MEAL BY ID
+    ///Fetches meal details by id and caches it
+    ///Parameter id: The id of the meal to fetch
     func fetchMealDetailWith(id: String) {
         if mealDetail[id] != nil {
             return

@@ -8,14 +8,19 @@
 import Foundation
 
 enum APIError: Error {
+    /// Indicates that the URL is invalid
     case badURL
+    ///Indicates an error related to the URL
     case url(URLError?)
+    ///Indicates a bad response status code. The HTTP response code recived in the response
     case badResponse(statusCode: Int)
+    ///Indicates a parsing error while decoding data
     case parsing(DecodingError?)
 }
 
 struct APIService {
     //MARK: - Method to fetch all meals
+    ///Parameter completion: A closure to handle a result
     func fetchMeals(completion: @escaping(Result<MealsResponse, APIError>) -> Void) {
         
         guard let url = URL(string: "https://themealdb.com/api/json/v1/1/filter.php?c=Dessert") else {
@@ -47,6 +52,8 @@ struct APIService {
     }
     
     //MARK: - Method to fetch meal detail by id
+    ///Parameter id: The id of the meal to fetch
+    ///Parameters completion: a closure to handle a result
     func fetchMealDetails(id: String, completion: @escaping(Result<MealDetailResponse, APIError>) -> Void) {
         
         guard let url = URL(string: "https://themealdb.com/api/json/v1/1/lookup.php?i=\(id)") else {
@@ -77,5 +84,6 @@ struct APIService {
             task.resume()
     }
     
+    ///An example meal used for referance
     static let exampleMeal = Meal(id: "53049", name: "Apam balik", image: "https:/www.themealdb.com/images/media/meals/adxcbq1619787919.jpg")
 }
