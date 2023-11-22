@@ -8,13 +8,40 @@
 import SwiftUI
 
 struct MealDetailView: View {
+
+    @ObservedObject var mealFetcher: MealFetcher
+    
+    let mealID: String
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        if let mealDetail = mealFetcher.mealDetail[mealID] {
+            ScrollView {
+                VStack {
+                    Text(mealDetail.name).font(.system(size: 24)).bold()
+                        .padding(.bottom, 5)
+                    Text("Ingredients:")
+                        .font(.headline)
+                        .padding(.bottom, 5)
+                    ForEach(mealDetail.ingredients, id: \.name) { ingredient in
+                        HStack {
+                            Text(ingredient.name)
+                            Text(ingredient.measurement)
+                        }.font(.footnote)
+                    }
+                }
+                .padding()
+                VStack(alignment: .leading, spacing: 5) {
+                    Text("Instructions:").font(.headline)
+                    Text(mealDetail.instructions).font(.footnote)
+                    Spacer()
+                }
+            }
+            .navigationTitle("Meal Details")
+        } else {
+            Text("Loading...")
+        }
+            
     }
+
 }
 
-struct MealDetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        MealDetailView()
-    }
-}

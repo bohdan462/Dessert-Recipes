@@ -11,9 +11,13 @@
 		CA131E6B2B0C4EFF004D222E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA131E6A2B0C4EFF004D222E /* ContentView.swift */; };
 		CA131E6D2B0C4F01004D222E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA131E6C2B0C4F01004D222E /* Assets.xcassets */; };
 		CA131E702B0C4F01004D222E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA131E6F2B0C4F01004D222E /* Preview Assets.xcassets */; };
-		CA131E7A2B0C4F02004D222E /* Dessert_RecipesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA131E792B0C4F02004D222E /* Dessert_RecipesTests.swift */; };
-		CA131E842B0C4F02004D222E /* Dessert_RecipesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA131E832B0C4F02004D222E /* Dessert_RecipesUITests.swift */; };
-		CA131E862B0C4F02004D222E /* Dessert_RecipesUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA131E852B0C4F02004D222E /* Dessert_RecipesUITestsLaunchTests.swift */; };
+		CA131E972B0C5571004D222E /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA131E962B0C5571004D222E /* Meal.swift */; };
+		CA131E992B0C5659004D222E /* MealDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA131E982B0C5659004D222E /* MealDetail.swift */; };
+		CA131E9B2B0C6064004D222E /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA131E9A2B0C6064004D222E /* APIService.swift */; };
+		CA131E9D2B0C6129004D222E /* MealFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA131E9C2B0C6129004D222E /* MealFetcher.swift */; };
+		CA131E9F2B0C68CD004D222E /* MealListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA131E9E2B0C68CD004D222E /* MealListView.swift */; };
+		CA131EA12B0C697F004D222E /* MealRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA131EA02B0C697F004D222E /* MealRow.swift */; };
+		CA131EA52B0C734D004D222E /* MealDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA131EA42B0C734D004D222E /* MealDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,10 +44,14 @@
 		CA131E6C2B0C4F01004D222E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CA131E6F2B0C4F01004D222E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CA131E752B0C4F02004D222E /* Dessert RecipesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Dessert RecipesTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		CA131E792B0C4F02004D222E /* Dessert_RecipesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dessert_RecipesTests.swift; sourceTree = "<group>"; };
 		CA131E7F2B0C4F02004D222E /* Dessert RecipesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Dessert RecipesUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		CA131E832B0C4F02004D222E /* Dessert_RecipesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dessert_RecipesUITests.swift; sourceTree = "<group>"; };
-		CA131E852B0C4F02004D222E /* Dessert_RecipesUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dessert_RecipesUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		CA131E962B0C5571004D222E /* Meal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
+		CA131E982B0C5659004D222E /* MealDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetail.swift; sourceTree = "<group>"; };
+		CA131E9A2B0C6064004D222E /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		CA131E9C2B0C6129004D222E /* MealFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealFetcher.swift; sourceTree = "<group>"; };
+		CA131E9E2B0C68CD004D222E /* MealListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealListView.swift; sourceTree = "<group>"; };
+		CA131EA02B0C697F004D222E /* MealRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealRow.swift; sourceTree = "<group>"; };
+		CA131EA42B0C734D004D222E /* MealDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,8 +83,6 @@
 			isa = PBXGroup;
 			children = (
 				CA131E672B0C4EFF004D222E /* Dessert Recipes */,
-				CA131E782B0C4F02004D222E /* Dessert RecipesTests */,
-				CA131E822B0C4F02004D222E /* Dessert RecipesUITests */,
 				CA131E662B0C4EFF004D222E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -94,8 +100,10 @@
 		CA131E672B0C4EFF004D222E /* Dessert Recipes */ = {
 			isa = PBXGroup;
 			children = (
+				CA131E942B0C5523004D222E /* Networking */,
+				CA131E932B0C54F0004D222E /* Models */,
+				CA131E922B0C54E8004D222E /* Views */,
 				CA131E682B0C4EFF004D222E /* Dessert_RecipesApp.swift */,
-				CA131E6A2B0C4EFF004D222E /* ContentView.swift */,
 				CA131E6C2B0C4F01004D222E /* Assets.xcassets */,
 				CA131E6E2B0C4F01004D222E /* Preview Content */,
 			);
@@ -110,21 +118,33 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		CA131E782B0C4F02004D222E /* Dessert RecipesTests */ = {
+		CA131E922B0C54E8004D222E /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				CA131E792B0C4F02004D222E /* Dessert_RecipesTests.swift */,
+				CA131E6A2B0C4EFF004D222E /* ContentView.swift */,
+				CA131E9E2B0C68CD004D222E /* MealListView.swift */,
+				CA131EA02B0C697F004D222E /* MealRow.swift */,
+				CA131EA42B0C734D004D222E /* MealDetailView.swift */,
 			);
-			path = "Dessert RecipesTests";
+			path = Views;
 			sourceTree = "<group>";
 		};
-		CA131E822B0C4F02004D222E /* Dessert RecipesUITests */ = {
+		CA131E932B0C54F0004D222E /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				CA131E832B0C4F02004D222E /* Dessert_RecipesUITests.swift */,
-				CA131E852B0C4F02004D222E /* Dessert_RecipesUITestsLaunchTests.swift */,
+				CA131E962B0C5571004D222E /* Meal.swift */,
+				CA131E982B0C5659004D222E /* MealDetail.swift */,
 			);
-			path = "Dessert RecipesUITests";
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CA131E942B0C5523004D222E /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				CA131E9A2B0C6064004D222E /* APIService.swift */,
+				CA131E9C2B0C6129004D222E /* MealFetcher.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,7 +278,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA131E6B2B0C4EFF004D222E /* ContentView.swift in Sources */,
+				CA131E9B2B0C6064004D222E /* APIService.swift in Sources */,
+				CA131E9D2B0C6129004D222E /* MealFetcher.swift in Sources */,
+				CA131E992B0C5659004D222E /* MealDetail.swift in Sources */,
+				CA131E972B0C5571004D222E /* Meal.swift in Sources */,
+				CA131E9F2B0C68CD004D222E /* MealListView.swift in Sources */,
 				CA131E692B0C4EFF004D222E /* Dessert_RecipesApp.swift in Sources */,
+				CA131EA12B0C697F004D222E /* MealRow.swift in Sources */,
+				CA131EA52B0C734D004D222E /* MealDetailView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,7 +293,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CA131E7A2B0C4F02004D222E /* Dessert_RecipesTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,8 +300,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CA131E842B0C4F02004D222E /* Dessert_RecipesUITests.swift in Sources */,
-				CA131E862B0C4F02004D222E /* Dessert_RecipesUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

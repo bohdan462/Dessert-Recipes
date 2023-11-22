@@ -8,13 +8,24 @@
 import SwiftUI
 
 struct MealListView: View {
+    @ObservedObject var mealFetcher: MealFetcher
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
+            NavigationView {
+                List(mealFetcher.meals, id: \.id) { meal in
+                    NavigationLink(destination: MealDetailView(mealFetcher: mealFetcher, mealID: meal.id)) {
+                        MealRow(meal: meal)
+                    }
+                }
+                .listStyle(PlainListStyle())
+                .navigationTitle("Desserts")
+            }
+        }
 }
+
 
 struct MealListView_Previews: PreviewProvider {
     static var previews: some View {
-        MealListView()
+        MealListView(mealFetcher: MockMealFetcher())
     }
 }

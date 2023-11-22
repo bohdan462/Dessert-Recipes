@@ -10,12 +10,9 @@ import SwiftUI
 struct ContentView: View {
    @StateObject var mealFetcher = MealFetcher()
     
-    
     var body: some View {
-        VStack {
-            Text("\(mealFetcher.meals.count)")
-                .foregroundColor(.red)
-        }
+
+        MealListView(mealFetcher: mealFetcher)
         .onAppear {
             mealFetcher.fetchAllMeals()
         }
